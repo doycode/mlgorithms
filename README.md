@@ -50,6 +50,10 @@ model.save_built_tree('built_tree.m', built_tree)
 load_tree = model.load_built_tree('built_tree.m')
 ```
 
+## Built With
+
+* [Python 3.6](https://www.python.org/downloads/)
+
 
 ## Contributing
 
@@ -61,16 +65,13 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Yuncheng Dong**
+* **Email**:dongyuncheng1991@gmail.com
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Machine Learning in Action
