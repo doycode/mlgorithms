@@ -14,21 +14,12 @@ Python 3.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Clone the project locally and enter the project folder.
 
 ```
-Give the example
+pip install .
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
