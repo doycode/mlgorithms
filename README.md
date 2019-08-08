@@ -66,7 +66,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Yuncheng Dong**
-* **Email**:dongyuncheng1991@gmail.com
+* **Email**: dongyuncheng1991@gmail.com
 
 ## License
 
