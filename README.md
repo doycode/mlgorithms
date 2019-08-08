@@ -24,14 +24,32 @@ pip install .
 #### Method 2
 We have also deployed the project to PyPI, and you can install it anytime, anywhere through the following instruction.
 
-'''
+```
 pip install mlgorithms
-'''
+```
 
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+If you install successfully, you can test it with the following code.
+
+```
+from mlgorithms.ID3 import ID3
+
+dat = [[1,1,'yes'],[1,1,'yes'],[1,0,'no'],[0,1,'no'],[0,1,'no']]
+features_name = ['f1', 'f2']
+model = ID3()
+built_tree = model.create_tree(dat, features_name, max_depth=None, min_samples_split=2)
+print(model.predict(built_tree, [1,0], features_name))
+```
+
+Then you can save and load the built tree through the following code.
+
+```
+model.save_built_tree('built_tree.m', built_tree)
+load_tree = model.load_built_tree('built_tree.m')
+```
+
 
 ### Break down into end to end tests
 
