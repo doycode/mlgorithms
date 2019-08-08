@@ -1,6 +1,6 @@
 # mlgorithms
 
-Machine learning libraries implemented entirely in python.
+Machine learning libraries implemented entirely in python. Updating...
 
 ## Getting Started
 
