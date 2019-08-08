@@ -22,7 +22,7 @@ pip install .
 ```
 
 #### Method 2
-We have also deployed the project to PyPI, and you can install it anytime, anywhere through the following instruction.
+We have also deployed the project to [PyPI](https://pypi.org/project/mlgorithms/), and you can install it anytime, anywhere through the following instruction.
 
 ```
 pip install mlgorithms
