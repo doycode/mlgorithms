@@ -74,4 +74,4 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LIC
 
 ## Acknowledgments
 
-* Machine Learning in Action
+* Peter Harrington
