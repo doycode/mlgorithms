@@ -39,7 +39,7 @@ from mlgorithms.ID3 import ID3
 dat = [[1,1,'yes'],[1,1,'yes'],[1,0,'no'],[0,1,'no'],[0,1,'no']]
 features_name = ['f1', 'f2']
 model = ID3()
-built_tree = model.create_tree(dat, features_name, max_depth=None, min_samples_split=2)
+built_tree = model.fit(dat, features_name, max_depth=None, min_samples_split=2)
 print(model.predict(built_tree, [1,0], features_name))
 ```
 
