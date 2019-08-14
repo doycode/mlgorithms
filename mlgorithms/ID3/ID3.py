@@ -90,8 +90,7 @@ class ID3:
         return best_feature_index            
     
     
-    def create_tree(self, dat, features_name, 
-                    max_depth=None, min_samples_split=2):
+    def fit(self, dat, features_name, max_depth=None, min_samples_split=2):#改成非递归
         try: 
             dat = self._check_input(dat)
             features_name = self._check_input(features_name)
@@ -170,10 +169,11 @@ def main():
     model = ID3()
     print(model._calc_shannon_entropy(dat))
     print(model._split_according_feature(dat, 0, 1))
-    built_tree = model.create_tree(dat, features_name)
+    built_tree = model.fit(dat, features_name, max_depth=None, min_samples_split=2)
     print(model.predict(built_tree, [1,0], features_name))
     model.save_built_tree('built_tree.m', built_tree)
     print(model.load_built_tree('built_tree.m'))
+    print(type(model.load_built_tree('built_tree.m')))
 
 
 if __name__ == "__main__":
