@@ -8,9 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-```
-Python 3.
-```
+* [Python 3.6](https://www.python.org/downloads/)
 
 ### Installing
 
@@ -49,10 +47,6 @@ Then you can save and load the built tree through the following code.
 model.save_built_tree('built_tree.m', built_tree)
 load_tree = model.load_built_tree('built_tree.m')
 ```
-
-## Built With
-
-* [Python 3.6](https://www.python.org/downloads/)
 
 
 ## Contributing
