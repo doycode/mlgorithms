@@ -34,11 +34,12 @@ If you install successfully, below is the test code for ID3.
 ```
 from mlgorithms.ID3 import ID3
 
-dat = [[1,1,'yes'],[1,1,'yes'],[1,0,'no'],[0,1,'no'],[0,1,'no']]
+X = [[1,1],[1,1],[1,0],[0,1],[0,1]]
+y = ['yes', 'yes', 'no', 'no', 'no']
 features_name = ['f1', 'f2']
-model = ID3()
-built_tree = model.fit(dat, features_name, max_depth=None, min_samples_split=2)
-print(model.predict(built_tree, [1,0], features_name))
+model = ID3(features_name=features_name)
+built_tree = model.fit(X, y)
+print(model.predict(built_tree, [[1,0]]))
 ```
 
 Then you can save and load the built tree through the following code.
