@@ -56,21 +56,21 @@ class NaiveBayes:
         except Exception as e:
             print(e)
                 
-                   
-    #def predict(self, to_be_classified, prob_dict, words_prob_dict):
+            
     def predict(self, to_be_classified):
         try:
             to_be_classified = self._check_input(to_be_classified)
-            max_key = None
-            max_prob = float("-inf")
-            for key in self.prob_dict.keys():
-                prob_tmp = np.sum(to_be_classified * self.words_prob_dict[key]) + np.log(
-                        self.prob_dict[key])
-                if(prob_tmp > max_prob):
-                    max_prob = prob_tmp
-                    max_key = key
-                    
-            return max_key
+            class_label = []
+            for sample in to_be_classified:
+                max_prob = float("-inf")
+                for key in self.prob_dict.keys():
+                    prob_tmp = np.sum(sample * self.words_prob_dict[key]) + np.log(
+                            self.prob_dict[key])
+                    if(prob_tmp > max_prob):
+                        max_prob = prob_tmp
+                        max_key = key
+                class_label.append(max_key)
+            return class_label
         
         except Exception as e:
             print(e)
@@ -86,41 +86,57 @@ def create_words_set(dat):
     return list(words_set)
 
 
-def sentence2vector(words_set, sentence):
-    sentence_vec = np.zeros(len(words_set))
-    for word in sentence:
-        if word in words_set:
-            idx = words_set.index(word)
-            sentence_vec[idx] += 1
-        else:
-            pass
+def sentences2vector(words_set, sentences):
+    m = len(sentences)
+    n = len(words_set)
+    sentence_vecs = np.zeros(shape=(m, n))
+    for i in range(len(sentences)):
+        for word in sentences[i]:
+            if word in words_set:
+                idx = words_set.index(word)
+                sentence_vecs[i][idx] += 1
+            else:
+                pass
             
-    return sentence_vec    
+    return sentence_vecs    
     
     
 def main():
-    dat = [['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'],
-           ['maybe', 'not', 'take', 'him', 'to', 'dog', 'park', 'stupid'],
-           ['my', 'dalmation', 'is', 'so', 'cute', 'I', 'love', 'him'],
-           ['stop', 'posting', 'stupid', 'worthless', 'garbage'],
-           ['mr', 'licks', 'ate', 'my', 'steak', 'how', 'to', 'stop', 'him'],
-           ['quit', 'buying', 'worthless', 'dog', 'food', 'stupid']]
-    class_label = [0, 1, 0, 1, 0, 1]
+    #Test1
+#    dat = [['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'],
+#           ['maybe', 'not', 'take', 'him', 'to', 'dog', 'park', 'stupid'],
+#           ['my', 'dalmation', 'is', 'so', 'cute', 'I', 'love', 'him'],
+#           ['stop', 'posting', 'stupid', 'worthless', 'garbage'],
+#           ['mr', 'licks', 'ate', 'my', 'steak', 'how', 'to', 'stop', 'him'],
+#           ['quit', 'buying', 'worthless', 'dog', 'food', 'stupid']]
+#    class_label = [0, 1, 0, 1, 0, 1]
+#    
+#    model = NaiveBayes()
+#    words_set = create_words_set(dat)
+#    print((words_set))
+#    sentence_vecs = sentences2vector(words_set, dat)
+#        
+#    model.fit(sentence_vecs, class_label)
+#    print(model.predict(sentence_vecs)) 
+     
+    #Test2
+#    X = [[1,1],[1,1],[1,0],[0,1],[0,1]]
+#    y = ['yes', 'yes', 'no', 'no', 'no']
+#    model = NaiveBayes()
+#    model.fit(X,y)
+#    print(model.predict(X))
     
+    #Test3
+    from sklearn import datasets
+    iris = datasets.load_iris()
+    X = iris.data
+    y = iris.target
     model = NaiveBayes()
-    words_set = create_words_set(dat)
-    print((words_set))
-    print(sentence2vector(words_set, dat[0]))
+    model.fit(X, y)
+    y_pred = model.predict(X)
+    print("Number of mislabeled points out of a total %d points : %d"
+      % (iris.data.shape[0],(iris.target != y_pred).sum()))
     
-    sentence_vecs = []
-    for sentence in dat:
-        sentence_vecs.append(sentence2vector(words_set, sentence))
-        
-    model.fit(sentence_vecs, class_label)
-    print(model.predict(sentence2vector(words_set, dat[1])))   
-    print('Done')  
-    
-
 
 if __name__ == '__main__':
     main()
