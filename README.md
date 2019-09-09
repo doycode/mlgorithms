@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 #### Method 1
-The project was deployed to [PyPI](https://pypi.org/project/mlgorithms/), and you can install it anytime, anywhere through the following instruction:
+The project was deployed to [PyPI](https://pypi.org/project/mlgorithms/), and it is recommended to use pip for installation:
 
 ```
 pip install mlgorithms            # normal install
