@@ -13,18 +13,22 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 #### Method 1
-Clone the project locally and enter the project folder.
+We have deployed the project to [PyPI](https://pypi.org/project/mlgorithms/), and you can install it anytime, anywhere through the following instruction:
 
 ```
-pip install .
+pip install mlgorithms            # normal install
+pip install --upgrade mlgorithms  # or update if needed
 ```
 
 #### Method 2
-We have also deployed the project to [PyPI](https://pypi.org/project/mlgorithms/), and you can install it anytime, anywhere through the following instruction.
+Alternatively, you could clone and run setup.py file:
 
 ```
-pip install mlgorithms
+git clone https://github.com/doycode/mlgorithms.git
+cd mlgorithms
+pip install .
 ```
+
 
 
 ## Running the tests
