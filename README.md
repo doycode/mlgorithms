@@ -46,7 +46,7 @@ built_tree = model.fit(X, y)
 print(model.predict(built_tree, [[1,0]]))
 ```
 
-Then you can save and load the built tree through the following code.
+Then you can save and load the built tree through the following code:
 
 ```
 model.save_built_tree('built_tree.m', built_tree)
