@@ -9,7 +9,7 @@ First, we scramble the data and train with two thirds of it, and then test on th
 We execute 10 times for each algorithm and finally average the accuracy, below is the result.
 
 | Algorithm  | Average Accuracy |
-| --- | --- |
+| :--- | ---: |
 | KNN| 96.8%|
 | Logistic Regression|  96.8%|
 | SVM| 96.2%|
@@ -70,21 +70,21 @@ predict_label2 = inst.model_predict(X=X, model=model)
 ```
 class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20, 
                                                        gen_iter_num=100, 
-											       p_crossover=0.8, 
-											       p_mutation=0.05,
-												   in_nodes_num=None,
-												   hidden_nodes_num=10,
-												   out_nodes_num=None,
-												   learning_rate=0.01,
-												   bias=True,
-												   activation_func="sigmoid",
-												   ann_iter_num=1000)
+			                               p_crossover=0.8, 
+						       p_mutation=0.05,
+						       in_nodes_num=None,
+						       hidden_nodes_num=10,
+						       out_nodes_num=None,
+						       learning_rate=0.01,
+						       bias=True,
+						       activation_func="sigmoid",
+						       ann_iter_num=1000)
 ```
 
 ## Parameters
 
 | name  | type |required?| default | description |
-| --- | --- | --- |---- | --- |
+| :--- | --- | --- |---- | ---: |
 | pop_size| int| no|20|Population size of genetic algorithm. |
 | gen_iter_num|  int| no| 100|Genetic algorithm iterations.|
 | p_crossover|  float| no| 0.8|Cross probability of genetic algorithm.|
