@@ -96,7 +96,7 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
 ## 方法
 
-* **model_fit(self, X, y)**  
+* **model_fit(self, X, y)**   
 
           X: 特征数据，ndarray 或 list, shape=(n_samples, n_features)  
 	  y: 标签, ndarray 或 list, shape=(n_samples,)
@@ -109,8 +109,7 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 	  model: 可以是加载的模型或者None，当为空时表示在模型拟合后直接进行预测。
 	
 	  Returns:
-	      y: ndarray, shape=(n_samples,)
-	         预测的类别。
+	      y: ndarray, shape=(n_samples,)  预测的类别。
 	
 * **model_save(self, model_path)**  
 
