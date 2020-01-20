@@ -125,7 +125,11 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
 * **model_load(self, model_path)**  
 
-      **model_path:** string, should include model name, for example: model_path="./model/test.model"
+      model_path: 
+          string, should include model name, for example: model_path="./model/test.model"  
+      Returns:
+          model
+      
 	
 * **fitness_plot(self)**
         Plot the maximum fitness of each generation of genetic algorithm.
