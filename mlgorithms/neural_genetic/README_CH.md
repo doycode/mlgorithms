@@ -1,10 +1,11 @@
+![英文](README.md)
 ![](https://miro.medium.com/max/1800/1*36MELEhgZsPFuzlZvObnxA.gif)
 
 # NGA: neural-genetic-algorithm
 该算法实现了遗传算法对神经网络的优化，我们用鸢尾花数据集对该算法进行了测试，并和其他一些算法比如K近邻、逻辑回归和支持向量机作了简单比较，具体做法是：首先把数据集随机打乱并用其中的三分之二用于训练，三分之一用于测试，并对每个算法执行10次，最后统计出每个算法的平均准确率，实验结果如下：
 
 | 算法  | 平均准确率 |
-| --- | --- |
+| :--- | ---: |
 | K近邻| 96.8%|
 | 逻辑回归|  96.8%|
 | 支持向量机| 96.2%|
@@ -64,21 +65,21 @@ predict_label2 = inst.model_predict(X=X, model=model)
 ```
 class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20, 
                                                        gen_iter_num=100, 
-											       p_crossover=0.8, 
-											       p_mutation=0.05,
-												   in_nodes_num=None,
-												   hidden_nodes_num=10,
-												   out_nodes_num=None,
-												   learning_rate=0.01,
-												   bias=True,
-												   activation_func="sigmoid",
-												   ann_iter_num=1000)
+						       p_crossover=0.8, 
+						       p_mutation=0.05,
+						       in_nodes_num=None,
+						       hidden_nodes_num=10,
+						       out_nodes_num=None,
+						       learning_rate=0.01,
+						       bias=True,
+						       activation_func="sigmoid",
+						       ann_iter_num=1000)
 ```
 
 ## 参数
 
 | 名称  | 类型 |必须?| 默认 | 说明 |
-| --- | --- | --- |---- | --- |
+| :--- | --- | --- |---- | ---: |
 | pop_size| int| 否|20|遗传算法的种群大小 |
 | gen_iter_num|  int| 否| 100|遗传算法迭代次数|
 | p_crossover|  float| 否| 0.8|遗传算法交叉概率|
