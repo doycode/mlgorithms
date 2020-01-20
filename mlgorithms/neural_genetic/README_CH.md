@@ -98,7 +98,7 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
 * **model_fit(self, X, y)**   
 
-       X: 特征数据，ndarray 或 list, shape=(n_samples, n_features)  
+      X: 特征数据，ndarray 或 list, shape=(n_samples, n_features)  
 	  y: 标签, ndarray 或 list, shape=(n_samples,)
 	
 	  Returns: None
