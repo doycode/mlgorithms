@@ -98,14 +98,14 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
 * **model_fit(self, X, y)**   
 
-          X: 特征数据，ndarray 或 list, shape=(n_samples, n_features)  
+       X: 特征数据，ndarray 或 list, shape=(n_samples, n_features)  
 	  y: 标签, ndarray 或 list, shape=(n_samples,)
 	
 	  Returns: None
 	
 * **model_predict(self, X, model)**  
 
-          X: ndarray 或 list, shape=(n_samples, n_features)
+      X: ndarray 或 list, shape=(n_samples, n_features)
 	  model: 可以是加载的模型或者None，当为空时表示在模型拟合后直接进行预测。
 	
 	  Returns:
@@ -113,14 +113,14 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 	
 * **model_save(self, model_path)**  
 
-         model_path: string 或 None
+      model_path: string 或 None
 	    当为string时需包含模型名字，比如: model_path="./model/test.model"； 当为None时, model_path="./model/NGA_时间戳.model"
 	    
 	  Returns: None
 
 * **model_load(self, model_path)**  
 
-          model_path:** string
+      model_path:** string
 	      需包含模型名字，比如: model_path="./model/test.model"
 	    
 	  Returns:
@@ -128,5 +128,5 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 	
 * **fitness_plot(self)**  
 
-        对每代最大适应度进行绘图，如下图所示。
+      对每代最大适应度进行绘图，如下图所示。
 	![适应度](./images/Fitness_20200119182305.png)
