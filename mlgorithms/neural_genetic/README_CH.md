@@ -1,4 +1,4 @@
-![英文](README.md)
+[英文](README.md)
 ![](https://miro.medium.com/max/1800/1*36MELEhgZsPFuzlZvObnxA.gif)
 
 # NGA: neural-genetic-algorithm
