@@ -114,7 +114,7 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 * **model_save(self, model_path)**  
 
       model_path: string 或 None
-	    当为string时需包含模型名字，比如: model_path="./model/test.model"； 当为None时, model_path="./model/NGA_时间戳.model"
+	      当为string时需包含模型名字，比如: model_path="./model/test.model"； 当为None时, model_path="./model/NGA_时间戳.model"
 	    
 	  Returns: None
 
@@ -128,5 +128,5 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 	
 * **fitness_plot(self)**  
 
-      对每代最大适应度进行绘图，如下图所示。
+      对每代最大适应度进行绘图，如下图所示：
 	![适应度](./images/Fitness_20200119182305.png)
