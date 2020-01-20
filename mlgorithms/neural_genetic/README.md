@@ -107,8 +107,7 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 	
      **y:** labels, ndarray or list, shape=(n_samples,)  
      
-     **Returns:**  
-             None
+     **Returns:** None
 	
 * **model_predict(self, X, model)**  
 
@@ -117,14 +116,16 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
      **model:** saved model or None, when it is none, we need make predictions immediately after fitting.  
      
      **Returns:**  
-             **y:**   ndarray, shape=(n_samples)
-	             The predicted classes. 
+     **y:**   ndarray, shape=(n_samples). The predicted classes. 
 	
-* **model_save(self, model_path)**
-        **model_path:** string or None, when it is a string, should include model name, for example: model_path="./model/test.model", when it is None, model_path="./model/NGA_timestamp.model"
+* **model_save(self, model_path)**  
 
-* **model_load(self, model_path)**
-        **model_path:** string, should include model name, for example: model_path="./model/test.model"
+     **model_path:** string or None, when it is a string, should include model name, for example: model_path="./model/test.model", when it is None, model_path="./model/NGA_timestamp.model"  
+     **Returns:** None
+
+* **model_load(self, model_path)**  
+
+      **model_path:** string, should include model name, for example: model_path="./model/test.model"
 	
 * **fitness_plot(self)**
         Plot the maximum fitness of each generation of genetic algorithm.
