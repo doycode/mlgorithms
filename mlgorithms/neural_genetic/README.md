@@ -103,33 +103,41 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
 * **model_fit(self, X, y)**  
 
-     **X:** ndarray or list, shape=(n_samples, n_features)  
+      X: ndarray or list, shape=(n_samples, n_features)  
 	
-     **y:** labels, ndarray or list, shape=(n_samples,)  
+      y: labels, ndarray or list, shape=(n_samples,)  
      
-     **Returns:** None
+      Returns: None
 	
 * **model_predict(self, X, model)**  
 
-     **X:** ndarray or list, shape=(n_samples, n_features)  
+      X: ndarray or list, shape=(n_samples, n_features)  
      
-     **model:** saved model or None, when it is none, we need make predictions immediately after fitting.  
+      model: saved model or None, when it is none, we need make predictions immediately after fitting.  
      
-     **Returns:**  
-     **y:**   ndarray, shape=(n_samples). The predicted classes. 
+      Returns:  
+          y: ndarray, shape=(n_samples).
+	      The predicted classes. 
 	
 * **model_save(self, model_path)**  
 
-     **model_path:** string or None, when it is a string, should include model name, for example: model_path="./model/test.model", when it is None, model_path="./model/NGA_timestamp.model"  
-     **Returns:** None
+      model_path: string or None
+              The string include model name, for example: model_path="./model/test.model", when it is None,   model_path="./model/NGA_timestamp.model"  
+      
+      Returns: 
+              None
 
 * **model_load(self, model_path)**  
 
-      model_path: 
-          string, should include model name, for example: model_path="./model/test.model"  
+      model_path: string
+              The string include model name, for example: model_path="./model/test.model"  
       Returns:
-          model
+              model(some parameters)
       
 	
-* **fitness_plot(self)**
-        Plot the maximum fitness of each generation of genetic algorithm.
+* **fitness_plot(self)**  
+
+      Plot the maximum fitness of each generation of genetic algorithm.  
+      
+      Returns:
+              None
