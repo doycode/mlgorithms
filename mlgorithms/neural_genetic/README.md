@@ -101,9 +101,11 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
 ## Methods
 
-* **model_fit(self, X, y)**
-        **X:** ndarray or list, shape=(n_samples, n_features)
-	    **y:** labels, ndarray or list, shape=(n_samples,)
+* **model_fit(self, X, y)**  
+
+        **X:** ndarray or list, shape=(n_samples, n_features)  
+	
+	**y:** labels, ndarray or list, shape=(n_samples,)
 	
 * **model_predict(self, X, model)**
         **X:** ndarray or list, shape=(n_samples, n_features)
