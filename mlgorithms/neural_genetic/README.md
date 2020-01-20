@@ -113,19 +113,19 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
       X: ndarray or list, shape=(n_samples, n_features)  
      
-      model: saved model or None, when it is none, we need make predictions immediately after fitting.  
+      model: saved model or None
+             When it is none, that means we should make predictions immediately after fitting.  
      
       Returns:  
           y: ndarray, shape=(n_samples).
-	      The predicted classes. 
+	     The predicted classes. 
 	
 * **model_save(self, model_path)**  
 
       model_path: string or None
               The string include model name, for example: model_path="./model/test.model", when it is None,   model_path="./model/NGA_timestamp.model"  
       
-      Returns: 
-              None
+      Returns: None
 
 * **model_load(self, model_path)**  
 
@@ -139,5 +139,4 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
       Plot the maximum fitness of each generation of genetic algorithm.  
       
-      Returns:
-              None
+      Returns: None
