@@ -117,8 +117,8 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
              When it is none, that means we should make predictions immediately after fitting.  
      
       Returns:  
-          y: ndarray, shape=(n_samples).
-	     The predicted classes. 
+             y: ndarray, shape=(n_samples).
+	        The predicted classes. 
 	
 * **model_save(self, model_path)**  
 
