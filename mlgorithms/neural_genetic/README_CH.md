@@ -128,5 +128,5 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 	
 * **fitness_plot(self)**  
 
-      对每代最大适应度进行绘图，如下图所示：
+      在NGA算法中，适应度为模型预测准确率，该方法实现了对每代最大适应度进行绘图，如下图所示：
 	![适应度](./images/Fitness_20200119182305.png)
