@@ -137,6 +137,6 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 	
 * **fitness_plot(self)**  
 
-      Plot the maximum fitness of each generation of genetic algorithm.  
+      In NGA, fitness function is the prediction accuracy of the model. This method realizes the function of plotting the maximum fitness of each generation of the genetic algorithm.
       
       Returns: None
