@@ -9,7 +9,7 @@ First, we scramble the data and train with two thirds of it, and then test on th
 We execute 10 times for each algorithm and finally average the accuracy, below is the result.
 
 | Algorithm  | Average Accuracy |
-| --- | --- |
+| :--- | ---: |
 | KNN| 96.8%|
 | Logistic Regression|  96.8%|
 | SVM| 96.2%|
@@ -85,7 +85,7 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 ## Parameters
 
 | name  | type |required?| default | description |
-| --- | --- | --- |---- | --- |
+| :--- | --- | --- |---- | ---: |
 | pop_size| int| no|20|Population size of genetic algorithm. |
 | gen_iter_num|  int| no| 100|Genetic algorithm iterations.|
 | p_crossover|  float| no| 0.8|Cross probability of genetic algorithm.|
@@ -103,19 +103,41 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
 ## Methods
 
-* **model_fit(self, X, y)**
-        **X:** ndarray or list, shape=(n_samples, n_features)
-	    **y:** labels, ndarray or list, shape=(n_samples,)
-	
-* **model_predict(self, X, model)**
-        **X:** ndarray or list, shape=(n_samples, n_features)
-	    **model:** saved model or None, when it is none, we need make predictions immediately after fitting.
-	
-* **model_save(self, model_path)**
-        **model_path:** string or None, when it is a string, should include model name, for example: model_path="./model/test.model", when it is None, model_path="./model/NGA_timestamp.model"
+* **model_fit(self, X, y)**  
 
-* **model_load(self, model_path)**
-        **model_path:** string, should include model name, for example: model_path="./model/test.model"
+      X: ndarray or list, shape=(n_samples, n_features)  
+	    
+      y: labels, ndarray or list, shape=(n_samples,)  
+         
+      Returns: None
 	
-* **fitness_plot(self)**
-        Plot the maximum fitness of each generation of genetic algorithm.
+* **model_predict(self, X, model)**  
+
+      X: ndarray or list, shape=(n_samples, n_features)  
+         
+      model: saved model or None
+             When it is none, that means we should make predictions immediately after fitting.  
+         
+      Returns:  
+             y: ndarray, shape=(n_samples).
+	        The predicted classes. 
+	
+* **model_save(self, model_path)**  
+
+      model_path: string or None
+              The string include model name, for example: model_path="./model/test.model", when it is None,   model_path="./model/NGA_timestamp.model"  
+      
+      Returns: None
+
+* **model_load(self, model_path)**  
+
+      model_path: string
+              The string include model name, for example: model_path="./model/test.model"  
+      Returns:
+              model(some parameters)
+  
+* **fitness_plot(self)**  
+
+      In NGA, fitness function is the prediction accuracy of the model. This method realizes the function of plotting the maximum fitness of each generation of the genetic algorithm.
+      
+      Returns: None

@@ -1,10 +1,11 @@
+[英文](README.md)
 ![](https://miro.medium.com/max/1800/1*36MELEhgZsPFuzlZvObnxA.gif)
 
 # NGA: neural-genetic-algorithm
 该算法实现了遗传算法对神经网络的优化，我们用鸢尾花数据集对该算法进行了测试，并和其他一些算法比如K近邻、逻辑回归和支持向量机作了简单比较，具体做法是：首先把数据集随机打乱并用其中的三分之二用于训练，三分之一用于测试，并对每个算法执行10次，最后统计出每个算法的平均准确率，实验结果如下：
 
 | 算法  | 平均准确率 |
-| --- | --- |
+| :--- | ---: |
 | K近邻| 96.8%|
 | 逻辑回归|  96.8%|
 | 支持向量机| 96.2%|
@@ -79,7 +80,7 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 ## 参数
 
 | 名称  | 类型 |必须?| 默认 | 说明 |
-| --- | --- | --- |---- | --- |
+| :--- | --- | --- |---- | ---: |
 | pop_size| int| 否|20|遗传算法的种群大小 |
 | gen_iter_num|  int| 否| 100|遗传算法迭代次数|
 | p_crossover|  float| 否| 0.8|遗传算法交叉概率|
@@ -97,20 +98,38 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 
 ## 方法
 
-* **model_fit(self, X, y)**
-        **X:** 特征数据，ndarray 或 list, shape=(n_samples, n_features)
-	    **y:** 标签, ndarray 或 list, shape=(n_samples,)
-	
-* **model_predict(self, X, model)**
-        **X:** ndarray 或 list, shape=(n_samples, n_features)
-	    **model:** 可以是加载的模型或者None，当为空时表示在模型拟合后直接进行预测。
-	
-* **model_save(self, model_path)**
-        **model_path:** string 或 None, 当为string时需包含模型名字，比如: model_path="./model/test.model"； 当为None时, model_path="./model/NGA_时间戳.model"
+* **model_fit(self, X, y)**   
 
-* **model_load(self, model_path)**
-        **model_path:** string, 需包含模型名字，比如: model_path="./model/test.model"
+      X: 特征数据，ndarray 或 list, shape=(n_samples, n_features)  
+	  y: 标签, ndarray 或 list, shape=(n_samples,)
 	
-* **fitness_plot(self)**
-        对每代最大适应度进行绘图，如下图所示。
-		![适应度](./images/Fitness_20200119182305.png)
+	  Returns: None
+	
+* **model_predict(self, X, model)**  
+
+      X: ndarray 或 list, shape=(n_samples, n_features)
+	  model: 可以是加载的模型或者None，当为空时表示在模型拟合后直接进行预测。
+	
+	  Returns:
+	      y: ndarray, shape=(n_samples,)  预测的类别。
+	
+* **model_save(self, model_path)**  
+
+      model_path: string 或 None
+	      当为string时需包含模型名字，比如: model_path="./model/test.model"； 当为None时, model_path="./model/NGA_时间戳.model"
+	
+	  Returns: None
+
+* **model_load(self, model_path)**  
+
+      model_path:** string
+	      需包含模型名字，比如: model_path="./model/test.model"
+	
+	  Returns:
+	      model(其实就是神经网络的权重参数)
+	
+* **fitness_plot(self)**  
+
+      在NGA算法中，适应度为模型预测准确率，该方法实现了对每代最大适应度进行绘图，如下图所示：
+	
+	![适应度](./images/Fitness_20200119182305.png)
