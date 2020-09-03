@@ -1,3 +1,3 @@
-from .neural_network import *
+from .ANN import *
 
-__all__ = ['neural_network']
+__all__ = ['ArtificialNeuralNetwork']

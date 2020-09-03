@@ -5,9 +5,9 @@ Created on Fri Jan 10 16:57:50 2020
 @author: yunchengdong
 """
 
-from mlgorithms.neural_genetic.ANN import *
+from mlgorithms.neural_network.ANN import *
+#from matplotlib import pylab
 from pylab import mpl
-from sklearn.datasets import load_iris
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -29,11 +29,12 @@ class NeuralGeneticAlgorithm(ArtificialNeuralNetwork):
                  p_crossover=0.8,  #交叉概率  crossover probability
                  p_mutation=0.05,  #变异概率  mutation probability
                  in_nodes_num=None,  #输入层神经元个数  number of neurons in input layer
-                 hidden_nodes_num=10,  #隐藏层神经元个数  number of neurons in hidden layer
+                 hidden_nodes_num=None,  #隐藏层神经元个数  number of neurons in hidden layer
                  out_nodes_num=None,  #输出层神经元个数  number of neurons in output layer
                  learning_rate=0.01,  #学习率，用于更新权重  used to update weights
                  bias=True,  #偏置量  y=wx+b  b is the bias
-                 activation_func="sigmoid",  #激活函数  activation function  
+                 hidden_activ="sigmoid",  #激活函数  activation function  
+                 output_activ="sigmoid",
                  ann_iter_num=1000  #神经网络迭代次数  iterations of neural network
                  ):
         
@@ -41,7 +42,8 @@ class NeuralGeneticAlgorithm(ArtificialNeuralNetwork):
                                          hidden_nodes_num=hidden_nodes_num,
                                          out_nodes_num=out_nodes_num,
                                          learning_rate=learning_rate,
-                                         activation_func=activation_func,
+                                         hidden_activ=hidden_activ,
+                                         output_activ=output_activ,
                                          bias=bias
                                          )
 
@@ -93,7 +95,7 @@ class NeuralGeneticAlgorithm(ArtificialNeuralNetwork):
         '''
         self.pop_info = []  #存储种群信息  to store population info
         for i in range(self.pop_size): 
-            self.create_weight_matrices()  #生成初始权重矩阵  create init weight mat
+            self.init_weights()  #生成初始权重矩阵  create init weight mat
             dict_tmp = {}
             mat1 = self.weights_hidden_in.copy()
             mat2 = self.weights_hidden_out.copy()
@@ -286,6 +288,8 @@ class NeuralGeneticAlgorithm(ArtificialNeuralNetwork):
                 
             if len(self.y.shape) != 1:
                 raise ValueError("Label data must be one-dimensional!")
+                
+            self.auto_para_base_on_train_data(X, y)
             
             self.pop_init()  #种群初始化  population initialization
             
@@ -423,6 +427,7 @@ class NeuralGeneticAlgorithm(ArtificialNeuralNetwork):
         '''
         
         try:
+            plt.figure()
             plt.plot(range(self.gen_iter_num), self.fitness_arr)
             plt.xlabel("种群迭代次数")
             plt.ylabel("适应度")
@@ -444,17 +449,19 @@ class NeuralGeneticAlgorithm(ArtificialNeuralNetwork):
         
 ###############################################################################
 def main():
+    
+    from sklearn.datasets import load_iris
 
     #导入鸢尾花数据  import iris data
     iris = load_iris()
     X, y = iris.data, iris.target
     in_num = X.shape[1]
     out_num = np.unique(y).shape[0]
-    inst = NeuralGeneticAlgorithm(in_nodes_num=in_num, out_nodes_num=out_num, #这两个为必须参数
+    inst = NeuralGeneticAlgorithm(in_nodes_num=in_num, out_nodes_num=out_num, #当这两个参数没有输入时，会从传入训练数据的特征数目和类别数目确定
                                   ann_iter_num=100, gen_iter_num=100, 
                                   pop_size=20, p_mutation=0.1)
     
-    times = 10
+    times = 3
     train_acc = np.zeros(times)
     test_acc = np.zeros(times)
     for i in range(times):

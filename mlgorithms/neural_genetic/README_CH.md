@@ -67,11 +67,12 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 											       p_crossover=0.8, 
 											       p_mutation=0.05,
 												   in_nodes_num=None,
-												   hidden_nodes_num=10,
+												   hidden_nodes_num=None,
 												   out_nodes_num=None,
 												   learning_rate=0.01,
 												   bias=True,
-												   activation_func="sigmoid",
+												   hidden_activ="sigmoid",
+												   output_activ="sigmoid",
 												   ann_iter_num=1000)
 ```
 
@@ -83,12 +84,13 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 | gen_iter_num|  int| 否| 100|遗传算法迭代次数|
 | p_crossover|  float| 否| 0.8|遗传算法交叉概率|
 | p_mutation|  float| 否| 0.05|遗传算法变异概率|
-| in_nodes_num|  int| 是| None|神经网络输入层神经元个数(等于特征数目)|
-| hidden_nodes_num|  int| 否| 10|神经网络隐藏层神经元个数|
-| out_nodes_num|  int| 是| None|神经网络输出层神经元个数(等于类别数目)|
+| in_nodes_num|  int| 否 | None|神经网络输入层神经元个数(等于特征数目)，如果为None，将根据输入的特征数据集自动计算特征数目|
+| hidden_nodes_num|  int| 否| None |神经网络隐藏层神经元个数，如果为None，将自动寻找最优|
+| out_nodes_num|  int| 否 | None|神经网络输出层神经元个数(等于类别数目)，如果为None，将根据输入的标签自动计算类别数目|
 | learning_rate|  float| 否| 0.01|学习率，其实就是步长，用于更新权重|
 | bias|  bool| 否| True|偏置单元|
-| activation_func|  string| 否| "sigmoid"|隐藏层和输出层的激活函数|
+| hidden_activ |  string| 否| "sigmoid"|隐藏层的激活函数，可选："sigmoid","tanh","relu"|
+| output_activ | string | 否 | “sigmoid” |输出层的激活函数，可选："sigmoid","tanh","relu"|
 | ann_iter_num|  int| 否| 1000|神经网络迭代次数|
 
 

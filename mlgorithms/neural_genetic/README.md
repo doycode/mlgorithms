@@ -77,7 +77,8 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 												   out_nodes_num=None,
 												   learning_rate=0.01,
 												   bias=True,
-												   activation_func="sigmoid",
+												   hidden_activ="sigmoid",
+												   output_activ="sigmoid",
 												   ann_iter_num=1000)
 ```
 
@@ -89,12 +90,13 @@ class mlgorithms.neural_genetic.NeuralGeneticAlgorithm(pop_size=20,
 | gen_iter_num|  int| no| 100|Genetic algorithm iterations.|
 | p_crossover|  float| no| 0.8|Cross probability of genetic algorithm.|
 | p_mutation|  float| no| 0.05|Mutation probability of genetic algorithm.|
-| in_nodes_num|  int| yes| None|Number of neurons in the input layer(equal to the number of features).|
-| hidden_nodes_num|  int| no| 10|Number of neurons in the hidden layer.|
-| out_nodes_num|  int| yes| None|Number of neurons in the output layer(equal to the number of categories).|
+| in_nodes_num|  int| no | None|Number of neurons in the input layer(equal to the number of features). If the parameter is none, the algorithm calculates the parameter automatically based on the input feature data set.|
+| hidden_nodes_num|  int| no| None |Number of neurons in the hidden layer. If the parameter is none, the algorithm calculates the parameter automatically.|
+| out_nodes_num|  int| no | None|Number of neurons in the output layer(equal to the number of categories). If the parameter is none, the algorithm calculates the parameter automatically based on the input label data set.|
 | learning_rate|  float| no| 0.01|Used to update weights.|
 | bias|  bool| no| True|Bias unit.|
-| activation_func|  string| no| "sigmoid"|Activation function of the hidden and output layer.|
+| hidden_activ |  string| no| "sigmoid"|Activation function of the hidden layer ("sigmoid", "tanh" or "relu").|
+| output_activ | string | no | "sigmoid" |Activation function of the output layer ("sigmoid", "tanh" or "relu").|
 | ann_iter_num|  int| no| 1000|Neural network iterations.|
 
 
